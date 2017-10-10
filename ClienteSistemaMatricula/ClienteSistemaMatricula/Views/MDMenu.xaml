@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="ClienteSistemaMatricula.Views.MDMenu">
+    <MasterDetailPage.Master>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Alunos" Command="AlunosCommand"/>
+        <Button Text="Professores" Command="ProfessoresCommand"/>
+        <Button Text="Cursos" Command="CursosCommand"/>
+        <Button Text="Materias" Command="MateriasCommand"/>
+        <Button Text="Turmas" Command="TurmasCommand"/>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+
+        <local:MainPage/>
+
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
