@@ -7,50 +7,57 @@ using System.Threading.Tasks;
 using Prism.Navigation;
 using Prism.Services;
 using System.Diagnostics;
+using Prism.Unity;
+using Xamarin.Forms;
+using ClienteSistemaMatricula.Views;
 
 namespace ClienteSistemaMatricula.ViewModels
 {
-    public class MDMenuViewModel : BindableBase
+    public class MDMenuViewModel : BaseViewModel, INavigatedAware
     {
+      
         public DelegateCommand AlunosCommand { get; set; }
         public DelegateCommand ProfessoresCommand { get; set; }
         public DelegateCommand CursosCommand { get; set; }
         public DelegateCommand MateriasCommand { get; set; }
         public DelegateCommand TurmasCommand { get; set; }
 
-        public MDMenuViewModel()
+        public MDMenuViewModel(INavigationService navigationService): base(navigationService)
         {
-            AlunosCommand = new DelegateCommand(async () => await ExecuteAlunosCommand());
-            ProfessoresCommand = new DelegateCommand(async () => await ExecuteProfessoresCommand());
-            CursosCommand = new DelegateCommand(async () => await ExecuteCursosCommand());
-            MateriasCommand = new DelegateCommand(async () => await ExecuteMateriasCommand());
-            TurmasCommand = new DelegateCommand(async () => await ExecuteTurmasCommand());
+            //todo navegation   
+
+            //   AlunosCommand = new DelegateCommand(async () => await ExecuteAlunosCommand());
+            AlunosCommand = new DelegateCommand(ExecuteAlunosCommand);
+            ProfessoresCommand = new DelegateCommand(ExecuteProfessoresCommand);
+            CursosCommand = new DelegateCommand(ExecuteCursosCommand);
+            MateriasCommand = new DelegateCommand(ExecuteMateriasCommand);
+            TurmasCommand = new DelegateCommand(ExecuteTurmasCommand);
         }
 
-        private async Task ExecuteAlunosCommand()
+        private void ExecuteAlunosCommand()
         {
-
-
+            (Application.Current.MainPage as MasterDetailPage).Detail = new  NavigationPage((Page)Activator.CreateInstance(typeof(AlunosPage)));
+            
         }
 
-        private async Task ExecuteProfessoresCommand()
+        private void ExecuteProfessoresCommand()
         {
-
+            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ProfessoresPage)));
         }
 
-        private async Task ExecuteCursosCommand()
+        private void ExecuteCursosCommand()
         {
-
+            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(CursosPage)));
         }
 
-        private async Task ExecuteMateriasCommand()
+        private void ExecuteMateriasCommand()
         {
-
+            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(MateriasPage)));
         }
 
-        private async Task ExecuteTurmasCommand()
+        private void ExecuteTurmasCommand()
         {
-
+            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TurmasPage)));
         }
     }
 }

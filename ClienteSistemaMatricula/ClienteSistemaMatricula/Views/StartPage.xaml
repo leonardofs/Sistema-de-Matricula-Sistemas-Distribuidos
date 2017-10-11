@@ -3,8 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="ClienteSistemaMatricula.Views.MainPage"
-             Title="MainPage">
-    <Label Text=" Tela Inicial"/>
-
+             x:Class="ClienteSistemaMatricula.Views.StartPage">
+    <Label Text=" tela inicial huuuuuuuuuuuuu"/>
 </ContentPage>

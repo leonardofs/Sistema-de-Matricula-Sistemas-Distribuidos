@@ -4,7 +4,8 @@
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
             xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
             prism:ViewModelLocator.AutowireViewModel="True"
-            x:Class="ClienteSistemaMatricula.Views.MateriasPage">
+            x:Class="ClienteSistemaMatricula.Views.MateriasPage"
+            Title=" Materias">
     <TabbedPage.Children>
         <local:CadastrarMateriaPage/>
         <local:ListarMateriasPage/>

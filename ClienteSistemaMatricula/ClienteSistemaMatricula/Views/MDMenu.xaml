@@ -6,16 +6,17 @@
                   prism:ViewModelLocator.AutowireViewModel="True"
                   x:Class="ClienteSistemaMatricula.Views.MDMenu">
     <MasterDetailPage.Master>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Button Text="Alunos" Command="AlunosCommand"/>
-        <Button Text="Professores" Command="ProfessoresCommand"/>
-        <Button Text="Cursos" Command="CursosCommand"/>
-        <Button Text="Materias" Command="MateriasCommand"/>
-        <Button Text="Turmas" Command="TurmasCommand"/>
+        <ContentPage Title="Menu">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="Alunos" Command="{Binding AlunosCommand}" />
+                <Button Text="Professores" Command="{Binding ProfessoresCommand}"/>
+                <Button Text="Cursos" Command="{Binding CursosCommand}"/>
+                <Button Text="Materias" Command="{Binding MateriasCommand}"/>
+                <Button Text="Turmas" Command="{Binding TurmasCommand}" />
+            </StackLayout>
+        </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-
-        <local:MainPage/>
-
+        <local:StartPage/>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

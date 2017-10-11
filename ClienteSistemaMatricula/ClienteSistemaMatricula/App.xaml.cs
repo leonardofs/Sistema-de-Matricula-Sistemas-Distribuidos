@@ -12,13 +12,12 @@ namespace ClienteSistemaMatricula
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("NavigationPage/MDMenu/MainPage");
+            NavigationService.NavigateAsync("MDMenu/MyNavigationPage/StartPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<MDMenu>();
             Container.RegisterTypeForNavigation<AlunosPage>();
             Container.RegisterTypeForNavigation<CadastrarAlunoPage>();
@@ -35,6 +34,9 @@ namespace ClienteSistemaMatricula
             Container.RegisterTypeForNavigation<TurmasPage>();
             Container.RegisterTypeForNavigation<CadastrarTurmaPage>();
             Container.RegisterTypeForNavigation<ListarTurmasPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<MyNavigationPage>();
+            Container.RegisterTypeForNavigation<StartPage>();
         }
     }
 }

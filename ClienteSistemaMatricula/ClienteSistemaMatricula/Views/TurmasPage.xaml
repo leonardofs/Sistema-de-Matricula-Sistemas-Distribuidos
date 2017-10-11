@@ -4,7 +4,8 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="ClienteSistemaMatricula.Views.TurmasPage">
+             x:Class="ClienteSistemaMatricula.Views.TurmasPage"
+            Title="Turmas">
     <TabbedPage.Children>
         <local:CadastrarTurmaPage/>
         <local:ListarTurmasPage/>
