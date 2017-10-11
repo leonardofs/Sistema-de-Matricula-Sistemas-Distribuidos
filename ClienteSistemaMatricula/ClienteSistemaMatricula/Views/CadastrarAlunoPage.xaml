@@ -5,5 +5,20 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.CadastrarAlunoPage"
              Title="Cadastrar Aluno">
-  
+    <StackLayout Orientation="Vertical">
+        <Entry Placeholder="Nome" Text="{Binding Nome}" HorizontalOptions="FillAndExpand" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+            <Label Text="Data de Nascimento" HorizontalOptions="Start" />
+            <DatePicker Date="{Binding DataNascimento}" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+            <Label Text="Sexo" HorizontalOptions="Start" />
+            <Picker x:Name="SexoPicker" SelectedIndex="{Binding Sexo}" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Masculino</x:String>
+                    <x:String>Feminino</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

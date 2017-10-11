@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Sistema_de_Matricula.Modelos;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Models;
+
 namespace Sistema_de_Matricula.Data
 { 
     public class MatriculaContext : DbContext

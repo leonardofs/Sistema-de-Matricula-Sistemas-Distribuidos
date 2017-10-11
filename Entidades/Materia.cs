@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Sistema_de_Matricula.Modelos
+namespace Entidades
 {
     [DataContract]
     public class Materia

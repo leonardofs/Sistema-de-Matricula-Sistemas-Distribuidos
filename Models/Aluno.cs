@@ -5,7 +5,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistema_de_Matricula.Modelos
+namespace Models
 {
     [DataContract]
     public class Aluno
@@ -18,10 +18,11 @@ namespace Sistema_de_Matricula.Modelos
         public string Nome { get; set; }
 
         [DataMember]
-        public string Sexo { get; set; }
+        public DateTime Nascimento { get; set; }
 
         [DataMember]
-        public int Matricula { get; set; }
+        public string Sexo { get; set; }
+
 
         //todo tratar 1 para n
       //  [IgnoreDataMember]

@@ -1,4 +1,4 @@
-﻿using Sistema_de_Matricula.Modelos;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

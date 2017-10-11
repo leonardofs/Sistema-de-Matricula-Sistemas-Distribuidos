@@ -1,5 +1,6 @@
-﻿using Sistema_de_Matricula.Data;
-using Sistema_de_Matricula.Modelos;
+﻿using Models;
+using Sistema_de_Matricula.Data;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

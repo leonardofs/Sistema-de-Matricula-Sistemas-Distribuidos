@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sistema_de_Matricula.Modelos;
 using Sistema_de_Matricula.Data;
 using Sistema_de_Matricula.Servicos;
+using Models;
 
 namespace Sistema_de_Matricula.Servicos
 {

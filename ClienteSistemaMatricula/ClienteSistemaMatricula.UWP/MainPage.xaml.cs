@@ -24,6 +24,9 @@ namespace ClienteSistemaMatricula.UWP
             this.InitializeComponent();
 
             LoadApplication(new ClienteSistemaMatricula.App(new UwpInitializer()));
+          
+
+                //Windows.UI.Xaml ;
         }
     }
 
