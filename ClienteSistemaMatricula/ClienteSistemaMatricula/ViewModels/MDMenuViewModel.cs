@@ -13,7 +13,7 @@ using ClienteSistemaMatricula.Views;
 
 namespace ClienteSistemaMatricula.ViewModels
 {
-    public class MDMenuViewModel : BaseViewModel, INavigatedAware
+    public class MDMenuViewModel : BaseViewModel, INavigationAware
     {
       
         public DelegateCommand AlunosCommand { get; set; }
@@ -27,37 +27,36 @@ namespace ClienteSistemaMatricula.ViewModels
             //todo navegation   
 
             //   AlunosCommand = new DelegateCommand(async () => await ExecuteAlunosCommand());
-            AlunosCommand = new DelegateCommand(ExecuteAlunosCommand);
-            ProfessoresCommand = new DelegateCommand(ExecuteProfessoresCommand);
-            CursosCommand = new DelegateCommand(ExecuteCursosCommand);
-            MateriasCommand = new DelegateCommand(ExecuteMateriasCommand);
-            TurmasCommand = new DelegateCommand(ExecuteTurmasCommand);
+            AlunosCommand = new DelegateCommand(async () => await ExecuteAlunosCommand());
+            ProfessoresCommand = new DelegateCommand(async () => await ExecuteProfessoresCommand());
+            CursosCommand = new DelegateCommand(async () => await ExecuteCursosCommand());
+            MateriasCommand = new DelegateCommand(async () => await ExecuteMateriasCommand());
+            TurmasCommand = new DelegateCommand(async () => await ExecuteTurmasCommand());
         }
 
-        private void ExecuteAlunosCommand()
+        private async Task ExecuteAlunosCommand()
         {
-            (Application.Current.MainPage as MasterDetailPage).Detail = new  NavigationPage((Page)Activator.CreateInstance(typeof(AlunosPage)));
-            
+            await _navigationService.NavigateAsync("MyNavigationPage/CadastrarAlunoPage", useModalNavigation: false);
+
         }
 
-        private void ExecuteProfessoresCommand()
+        private async Task ExecuteProfessoresCommand()
         {
-            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ProfessoresPage)));
+            await _navigationService.NavigateAsync("MyNavigationPage/ProfessoresPage", useModalNavigation: false);        }
+
+        private async Task ExecuteCursosCommand()
+        {
+            await _navigationService.NavigateAsync("MyNavigationPage/CursosPage", useModalNavigation: false);
         }
 
-        private void ExecuteCursosCommand()
+        private async Task ExecuteMateriasCommand()
         {
-            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(CursosPage)));
+            await _navigationService.NavigateAsync("MyNavigationPage/MateriasPage", useModalNavigation: false);
         }
 
-        private void ExecuteMateriasCommand()
+        private async Task ExecuteTurmasCommand()
         {
-            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(MateriasPage)));
-        }
-
-        private void ExecuteTurmasCommand()
-        {
-            (Application.Current.MainPage as MasterDetailPage).Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(TurmasPage)));
+            await _navigationService.NavigateAsync("MyNavigationPage/TurmasPage", useModalNavigation: false);
         }
     }
 }

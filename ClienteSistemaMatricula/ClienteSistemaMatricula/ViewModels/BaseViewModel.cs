@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace ClienteSistemaMatricula.ViewModels
 {
-    public class BaseViewModel : BindableBase, INavigatedAware
+    public class BaseViewModel : BindableBase, INavigationAware
     {
 
             private string _title;

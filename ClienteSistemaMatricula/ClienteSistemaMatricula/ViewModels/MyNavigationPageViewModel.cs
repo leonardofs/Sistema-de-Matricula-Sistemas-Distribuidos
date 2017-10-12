@@ -7,7 +7,7 @@ using Prism.Navigation;
 
 namespace ClienteSistemaMatricula.ViewModels
 {
-    public class MyNavigationPageViewModel : BaseViewModel, INavigatingAware
+    public class MyNavigationPageViewModel : BaseViewModel, INavigationAware
     {
     
         public MyNavigationPageViewModel(INavigationService navigationService) : base(navigationService)

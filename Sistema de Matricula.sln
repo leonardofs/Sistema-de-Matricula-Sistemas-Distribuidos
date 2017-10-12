@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema de Matricula", "Sistema de Matricula\Sistema de Matricula.csproj", "{4F0820D9-B1D6-4834-85B4-A81BEF3320C5}"
 EndProject
@@ -55,7 +55,9 @@ Global
 		{0E8A439E-52BC-49F4-BB27-EED64DE90462}.Release|x64.Build.0 = Release|Any CPU
 		{0E8A439E-52BC-49F4-BB27-EED64DE90462}.Release|x86.ActiveCfg = Release|Any CPU
 		{0E8A439E-52BC-49F4-BB27-EED64DE90462}.Release|x86.Build.0 = Release|Any CPU
-		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|Any CPU.Build.0 = Debug|x64
+		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|Any CPU.Deploy.0 = Debug|x64
 		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|ARM.ActiveCfg = Debug|ARM
 		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|ARM.Build.0 = Debug|ARM
 		{5E4AEDFB-4560-44FA-8CD9-CBBB25A96DAD}.Debug|ARM.Deploy.0 = Debug|ARM
