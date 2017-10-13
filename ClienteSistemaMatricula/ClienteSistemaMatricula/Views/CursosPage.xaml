@@ -5,7 +5,9 @@
             xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="ClienteSistemaMatricula.Views.CursosPage"
-            Title=" Cursos">
+            Title="Cursos"
+            BarTextColor="White"
+            BarBackgroundColor="#7689a9">
     <TabbedPage.Children>
         <local:CadastrarCursoPage/>
         <local:ListarCursosPage/>

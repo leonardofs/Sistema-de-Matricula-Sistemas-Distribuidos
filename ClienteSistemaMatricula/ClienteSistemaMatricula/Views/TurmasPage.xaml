@@ -5,7 +5,9 @@
              xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.TurmasPage"
-            Title="Turmas">
+             Title="Turmas"
+             BarTextColor="White"
+             BarBackgroundColor="#7689a9">
     <TabbedPage.Children>
         <local:CadastrarTurmaPage/>
         <local:ListarTurmasPage/>

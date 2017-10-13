@@ -5,10 +5,11 @@
             xmlns:local="clr-namespace:ClienteSistemaMatricula.Views"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="ClienteSistemaMatricula.Views.ProfessoresPage"
-            Title="Professores">
+            Title="Professores"
+            BarTextColor="White"
+            BarBackgroundColor="#7689a9">
     <TabbedPage.Children>
         <local:CadastrarProfessorPage/>
         <local:ListarProfessoresPage/>
-    </TabbedPage.Children>
-    
+    </TabbedPage.Children>    
 </TabbedPage>

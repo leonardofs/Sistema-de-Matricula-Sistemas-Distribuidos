@@ -1,12 +1,12 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
+using Prism.Navigation;
+using Prism.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace ClienteSistemaMatricula.ViewModels
 {
-    public class CadastrarAlunoPageViewModel : BindableBase
+    public class CadastrarAlunoPageViewModel : BaseViewModel
     {
 
         private string _nome;
@@ -30,12 +30,32 @@ namespace ClienteSistemaMatricula.ViewModels
             set { SetProperty(ref _sexo, value); }
         }
 
+        public DelegateCommand CadastrarButtonCommand { get; set; }
 
-        public CadastrarAlunoPageViewModel()
+        //////////////////////////////////////CONSTRUTOR////////////////////////////////////////    
+        public CadastrarAlunoPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
+            Nome = "";
+            DataNascimento = new DateTime(2000, 1, 1, 0, 00, 0);
+            Sexo = "0"; //0==Masculino   1==Feminino
 
+            CadastrarButtonCommand = new DelegateCommand(async () => await ExecuteCadastrarButtonCommand());
         }
-            
+
+        private async Task ExecuteCadastrarButtonCommand()
+        {
+            if (Nome == "" || Nome.Length <= 3)
+            {
+                await _pageDialogService.DisplayAlertAsync("Erro", "Nome inválido", "OK");
+            }
+            else
+            {
+                //TODO inserir no banco
+                await _pageDialogService.DisplayAlertAsync("Sucesso", "Cadastrado com sucesso", "OK");
+                Nome = "";
+            }
+        }
+
     }
-    
+
 }

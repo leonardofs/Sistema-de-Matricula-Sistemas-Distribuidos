@@ -5,5 +5,12 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.ListarMateriasPage"
              Title="Listar Materias">
-  
+
+    <AbsoluteLayout>
+        <!--px, py, tx, ty-->
+        <StackLayout AbsoluteLayout.LayoutBounds=".5,.5,.95,.95" AbsoluteLayout.LayoutFlags="All">
+
+        </StackLayout>
+    </AbsoluteLayout>
+
 </ContentPage>

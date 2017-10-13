@@ -5,20 +5,30 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.CadastrarAlunoPage"
              Title="Cadastrar Aluno">
-    <StackLayout Orientation="Vertical">
-        <Entry Placeholder="Nome" Text="{Binding Nome}" HorizontalOptions="FillAndExpand" />
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-            <Label Text="Data de Nascimento" HorizontalOptions="Start" />
-            <DatePicker Date="{Binding DataNascimento}" HorizontalOptions="FillAndExpand" />
+
+    <AbsoluteLayout>
+        <!--px, py, tx, ty-->
+        <StackLayout AbsoluteLayout.LayoutBounds=".5,.5,.95,.95" AbsoluteLayout.LayoutFlags="All">
+            <Entry Placeholder="Nome" Text="{Binding Nome}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Data de nascimento" TextColor="#152d54"/>
+                <DatePicker Date="{Binding DataNascimento}" TextColor="#152d54" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Sexo" TextColor="#152d54"/>
+                <Picker x:Name="SexoPicker" SelectedIndex="{Binding Sexo}" TextColor="#152d54" HorizontalOptions="EndAndExpand">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <Button Text="Cadastrar" TextColor="White" BackgroundColor="#2c4770" VerticalOptions="EndAndExpand" Command="{Binding CadastrarButtonCommand}"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-            <Label Text="Sexo" HorizontalOptions="Start" />
-            <Picker x:Name="SexoPicker" SelectedIndex="{Binding Sexo}" HorizontalOptions="FillAndExpand">
-                <Picker.Items>
-                    <x:String>Masculino</x:String>
-                    <x:String>Feminino</x:String>
-                </Picker.Items>
-            </Picker>
-        </StackLayout>
-    </StackLayout>
+        
+    </AbsoluteLayout>
+
 </ContentPage>

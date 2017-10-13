@@ -5,4 +5,14 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.CadastrarMateriaPage"
              Title="Cadastrar Materia">
+
+    <AbsoluteLayout>
+        <!--px, py, tx, ty-->
+        <StackLayout AbsoluteLayout.LayoutBounds=".5,.5,.95,.95" AbsoluteLayout.LayoutFlags="All">
+            <Entry Placeholder="Nome" Text="{Binding Nome}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
+            <Button Text="Cadastrar" TextColor="White" BackgroundColor="#2c4770" VerticalOptions="EndAndExpand" Command="{Binding CadastrarButtonCommand}"/>
+        </StackLayout>
+    </AbsoluteLayout>
+
 </ContentPage>

@@ -6,4 +6,33 @@
              x:Class="ClienteSistemaMatricula.Views.CadastrarProfessorPage"
              Title="Cadastrar Professor">
 
+    <AbsoluteLayout>
+        <!--px, py, tx, ty-->
+        <StackLayout AbsoluteLayout.LayoutBounds=".5,.5,.95,.95" AbsoluteLayout.LayoutFlags="All">
+            <Entry Placeholder="Nome" Text="{Binding Nome}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Data de nascimento" TextColor="#152d54"/>
+                <DatePicker Date="{Binding DataNascimento}" TextColor="#152d54" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Sexo" TextColor="#152d54"/>
+                <Picker x:Name="SexoPicker" SelectedIndex="{Binding Sexo}" TextColor="#152d54" HorizontalOptions="EndAndExpand">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <Entry Placeholder="Registro" Text="{Binding Registro}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
+            <Entry Placeholder="Grau acadêmico" Text="{Binding GrauAcademico}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
+            <Button Text="Cadastrar" TextColor="White" BackgroundColor="#2c4770" VerticalOptions="EndAndExpand" Command="{Binding CadastrarButtonCommand}"/>
+        </StackLayout>
+
+    </AbsoluteLayout>
+
 </ContentPage>

@@ -4,6 +4,7 @@
                 xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
                 prism:ViewModelLocator.AutowireViewModel="True"
                 x:Class="ClienteSistemaMatricula.Views.MyNavigationPage"
-                BarBackgroundColor="#9ab0d1">
+                BarBackgroundColor="#4d658d"
+                BarTextColor="White">
     
 </NavigationPage>
