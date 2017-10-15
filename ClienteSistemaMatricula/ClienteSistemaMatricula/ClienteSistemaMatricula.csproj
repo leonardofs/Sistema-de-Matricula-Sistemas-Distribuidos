@@ -11,7 +11,8 @@
     <RootNamespace>ClienteSistemaMatricula</RootNamespace>
     <AssemblyName>ClienteSistemaMatricula</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <!--<TargetFrameworkProfile>Profile259</TargetFrameworkProfile> -->
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <NuGetPackageImportStamp>
@@ -35,6 +36,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\RefAlunoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RefCursoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RefMateriaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RefProfessorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RefTurmaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AlunosPageViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -146,7 +172,73 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\RefAlunoService\ClienteSistemaMatricula.RefAlunoService.Aluno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RefAlunoService\service.wsdl" />
+    <None Include="Connected Services\RefAlunoService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefAlunoService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefAlunoService\Sistema_de_Matricula.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefCursoService\ClienteSistemaMatricula.RefCursoService.Curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RefCursoService\service.wsdl" />
+    <None Include="Connected Services\RefCursoService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefCursoService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefCursoService\Sistema_de_Matricula.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefMateriaService\ClienteSistemaMatricula.RefMateriaService.Materia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RefMateriaService\service.wsdl" />
+    <None Include="Connected Services\RefMateriaService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefMateriaService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefMateriaService\Sistema_de_Matricula.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefProfessorService\ClienteSistemaMatricula.RefProfessorService.Professor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RefProfessorService\service.wsdl" />
+    <None Include="Connected Services\RefProfessorService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefProfessorService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefProfessorService\Sistema_de_Matricula.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefTurmaService\ClienteSistemaMatricula.RefTurmaService.Turma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RefTurmaService\service.wsdl" />
+    <None Include="Connected Services\RefTurmaService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefTurmaService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RefTurmaService\Sistema_de_Matricula.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MDMenu.xaml">
@@ -255,6 +347,76 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RefAlunoService\" />
+    <WCFMetadataStorage Include="Connected Services\RefCursoService\" />
+    <WCFMetadataStorage Include="Connected Services\RefMateriaService\" />
+    <WCFMetadataStorage Include="Connected Services\RefProfessorService\" />
+    <WCFMetadataStorage Include="Connected Services\RefTurmaService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefAlunoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefAlunoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefAlunoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefCursoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefCursoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefCursoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefMateriaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefMateriaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefMateriaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefProfessorService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefProfessorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefProfessorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefTurmaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefTurmaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RefTurmaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
