@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sistema_de_Matricula.Data;
-using Models;
+using Sistema_de_Matricula.Models;
 
 namespace Sistema_de_Matricula.Servicos
 {

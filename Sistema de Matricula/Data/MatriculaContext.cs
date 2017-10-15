@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Models;
+using Sistema_de_Matricula.Models;
 
 namespace Sistema_de_Matricula.Data
 { 

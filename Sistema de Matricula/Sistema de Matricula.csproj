@@ -213,6 +213,11 @@
     <Compile Include="Data\ProfessorDAO.cs" />
     <Compile Include="Data\TurmaDAO.cs" />
     <Compile Include="Data\MatriculaContext.cs" />
+    <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Materia.cs" />
+    <Compile Include="Models\Professor.cs" />
+    <Compile Include="Models\Turma.cs" />
     <Compile Include="Servicos\AlunoService.cs" />
     <Compile Include="Servicos\IAlunoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -232,12 +237,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{91e7767b-1a88-4c58-9032-6dce245ec6fe}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
