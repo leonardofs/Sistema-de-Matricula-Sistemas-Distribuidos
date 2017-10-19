@@ -17,6 +17,9 @@ namespace Sistema_de_Matricula.Servicos
         Materia Buscar(int id);
 
         [OperationContract]
+        IQueryable<Materia> BuscarTodos();
+
+        [OperationContract]
         void Remover(int id);
 
         //todo atualizar

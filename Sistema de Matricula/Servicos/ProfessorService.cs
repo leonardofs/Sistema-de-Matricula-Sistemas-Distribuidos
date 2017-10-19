@@ -24,6 +24,12 @@ namespace Sistema_de_Matricula.Servicos
             return dao.Buscar(nome);
         }
 
+        public IQueryable<Professor> BuscarTodos()
+        {
+            ProfessorDAO dao = new ProfessorDAO();
+            return dao.BuscarTodos();
+        }
+
         public void Remover(string nome)
         {
             ProfessorDAO dao = new ProfessorDAO();

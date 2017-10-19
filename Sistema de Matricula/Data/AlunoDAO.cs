@@ -38,6 +38,16 @@ namespace Sistema_de_Matricula.Data
         }
 
 
+        public IQueryable<Aluno> BuscarTodos()
+        {
+            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
+            {
+                IQueryable<Aluno> res = db.Alunos;
+                db.Dispose();
+                return res;
+            }
+        }
+
         public void Remover(string nome) {
             using (SistemaMatriculaContext db = new SistemaMatriculaContext())
             {

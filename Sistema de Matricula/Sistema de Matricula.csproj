@@ -219,6 +219,10 @@
     <Compile Include="Migrations\20171018185832_Inicial.designer.cs">
       <DependentUpon>20171018185832_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20171019180100_AutoIncrementKey.cs" />
+    <Compile Include="Migrations\20171019180100_AutoIncrementKey.designer.cs">
+      <DependentUpon>20171019180100_AutoIncrementKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\SistemaMatriculaContextModelSnapshot.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\AlunosTurma.cs" />

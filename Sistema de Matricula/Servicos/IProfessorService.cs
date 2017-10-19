@@ -17,6 +17,9 @@ namespace Sistema_de_Matricula.Servicos
         Professor Buscar(string nome);
 
         [OperationContract]
+        IQueryable<Professor> BuscarTodos();
+
+        [OperationContract]
         void Remover(string nome);
 
         //todo atualizar

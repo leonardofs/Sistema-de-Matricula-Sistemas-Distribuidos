@@ -17,6 +17,9 @@ namespace Sistema_de_Matricula.Servicos
         Turma Buscar(string nome);
 
         [OperationContract]
+        IQueryable<Turma> BuscarTodos();
+
+        [OperationContract]
         void Remover(string nome);
 
         //todo atualizar
