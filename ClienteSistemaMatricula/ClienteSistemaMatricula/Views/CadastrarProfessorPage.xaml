@@ -28,7 +28,18 @@
 
             <Entry Placeholder="Registro" Text="{Binding Registro}" TextColor="#152d54" PlaceholderColor="#152d54"/>
 
-            <Entry Placeholder="Grau acadêmico" Text="{Binding GrauAcademico}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Grau acadêmico" TextColor="#152d54"/>
+                <Picker SelectedIndex="{Binding GrauAcademico}" TextColor="#152d54" HorizontalOptions="EndAndExpand">
+                    <Picker.Items>
+                        <x:String>Graduado</x:String>
+                        <x:String>Pós-Graduado</x:String>
+                        <x:String>Mestre</x:String>
+                        <x:String>Doutor</x:String>
+                        <x:String>Pós-Doutor</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
 
             <Button Text="Cadastrar" TextColor="White" BackgroundColor="#2c4770" VerticalOptions="EndAndExpand" Command="{Binding CadastrarButtonCommand}"/>
         </StackLayout>

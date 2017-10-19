@@ -5,4 +5,31 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ClienteSistemaMatricula.Views.StartPage"
              Title="Tela inicial">
+
+    <AbsoluteLayout>
+        <!--px, py, tx, ty-->
+
+        <Label Text="Trabalho de Sistemas Distribuídos" TextColor="#152d54" Font="Large" HorizontalTextAlignment="Center" 
+               AbsoluteLayout.LayoutBounds=".5,.01,.95,.1" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Label Text="Sistema de Matrículas" TextColor="#152d54" Font="Medium" HorizontalTextAlignment="Center"
+               AbsoluteLayout.LayoutBounds=".5,.11,.95,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Label Text="Componentes: Frederico Augusto, Guilherme Soares e Leonardo Flávio" TextColor="#152d54"
+               AbsoluteLayout.LayoutBounds=".99,.21,.5,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Label Text="8º Período de Engenharia da Computação" TextColor="#152d54"
+               AbsoluteLayout.LayoutBounds=".99,.26,.5,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Label Text="Universidade do Estado de Minas Gerais" TextColor="#152d54"
+               AbsoluteLayout.LayoutBounds=".99,.31,.5,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Entry Placeholder="Digite o IP do servidor" PlaceholderColor="#152d54" Text="{Binding IPServidor}"
+               AbsoluteLayout.LayoutBounds=".01,.99,.49,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+        <Button Text="Salvar IP" TextColor="White" BackgroundColor="#2c4770" Command="{Binding SalvarButtonCommand}"
+                AbsoluteLayout.LayoutBounds=".99,.99,.49,.05" AbsoluteLayout.LayoutFlags="All"/>
+
+    </AbsoluteLayout>
+
 </ContentPage>

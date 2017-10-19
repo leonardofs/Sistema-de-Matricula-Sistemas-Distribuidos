@@ -14,19 +14,26 @@ namespace ClienteSistemaMatricula.ViewModels
             set { SetProperty(ref _nome, value); }
         }
 
+        private string _CursoID;
+        public string CursoID
+        {
+            get { return _CursoID; }
+            set { SetProperty(ref _CursoID, value); }
+        }
+
         public DelegateCommand CadastrarButtonCommand { get; set; }
 
         //////////////////////////////////////CONSTRUTOR////////////////////////////////////////
         public CadastrarMateriaPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             Nome = "";
-
+            CursoID = "";
             CadastrarButtonCommand = new DelegateCommand(async () => await ExecuteCadastrarButtonCommand());
         }
 
         private async Task ExecuteCadastrarButtonCommand()
         {
-            if (Nome == "" || Nome.Length <= 3)
+            if (Nome.Length <= 3)
             {
                 await _pageDialogService.DisplayAlertAsync("Erro", "Nome inválido", "OK");
             }
