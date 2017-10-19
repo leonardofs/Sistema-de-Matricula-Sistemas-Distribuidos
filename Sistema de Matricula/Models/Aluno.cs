@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sistema_de_Matricula.Models
 {
@@ -11,6 +12,7 @@ namespace Sistema_de_Matricula.Models
     public class Aluno
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DataMember]
         public int ID { get; set; }
 
@@ -31,18 +33,6 @@ namespace Sistema_de_Matricula.Models
 
         [IgnoreDataMember]
         public virtual IList<AlunosTurma> AlunosTurmas { get; set; }//navigation
-
-
-
-        //todo tratar 1 para n
-        //  [IgnoreDataMember]
-        //public virtual Curso Cursos { get; set; } //navigation
-
-        // [DataMember]
-        // public int CursoID { get; set; }
-
-        // [IgnoreDataMember]
-        // public virtual IList<AlunosTurma> AlunosTurmas { get; set; }//navigation
 
     }
 }

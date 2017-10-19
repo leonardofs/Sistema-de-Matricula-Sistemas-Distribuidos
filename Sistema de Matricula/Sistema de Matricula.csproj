@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AlunoDAO.cs" />
+    <Compile Include="Data\AlunosTurmaDAO.cs" />
     <Compile Include="Data\CursoDAO.cs" />
     <Compile Include="Data\MateriaDAO.cs" />
     <Compile Include="Data\ProfessorDAO.cs" />
@@ -226,8 +227,10 @@
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Turma.cs" />
     <Compile Include="Servicos\AlunoService.cs" />
+    <Compile Include="Servicos\AlunoTurmaService.cs" />
     <Compile Include="Servicos\IAlunoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\IAlunoTurmaService.cs" />
     <Compile Include="Servicos\ICursoService.cs" />
     <Compile Include="Servicos\IMateriaService.cs" />
     <Compile Include="Servicos\IProfessorService.cs" />
