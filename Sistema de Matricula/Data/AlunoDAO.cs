@@ -14,25 +14,35 @@ namespace Sistema_de_Matricula.Data
     //TODO: PASSAR TODOS OS METODOS PARA ADO.NET 
     public class AlunoDAO
     {
-        private static List<Aluno> alunos = new List<Aluno>();
-
         public void Add(Aluno a)
         {
-            AlunoDAO.alunos.Add(a);  
+            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
+            {
+                 db.Alunos.AddAsync(a);
+                 db.SaveChanges();
+            }
+
         }
 
 
         public Aluno Buscar(string nome)
         {
-            var resultado = AlunoDAO.alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-            return (Aluno)resultado;
+            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
+            {
+             var res = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
+            return (Aluno)res;
+            }
+
         }
 
 
         public void Remover(string nome) {
-            var resultado = AlunoDAO.alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-
-            AlunoDAO.alunos.Remove((Aluno)resultado);
+            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
+            {
+                var resultado = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
+                db.Alunos.Remove((Aluno)resultado);
+                db.SaveChanges();
+            }
         }
 
         //todo: atualizar

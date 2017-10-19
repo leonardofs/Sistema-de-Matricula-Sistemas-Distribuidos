@@ -26,6 +26,8 @@
     <XsdCodeGenGenerateSerializableTypes>True</XsdCodeGenGenerateSerializableTypes>
     <XsdCodeGenGenerateInternalTypes>False</XsdCodeGenGenerateInternalTypes>
     <XsdCodeGenEnableDataBinding>False</XsdCodeGenEnableDataBinding>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -40,7 +42,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -212,8 +214,13 @@
     <Compile Include="Data\MateriaDAO.cs" />
     <Compile Include="Data\ProfessorDAO.cs" />
     <Compile Include="Data\TurmaDAO.cs" />
-    <Compile Include="Data\MatriculaContext.cs" />
+    <Compile Include="Migrations\20171018185832_Inicial.cs" />
+    <Compile Include="Migrations\20171018185832_Inicial.designer.cs">
+      <DependentUpon>20171018185832_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SistemaMatriculaContextModelSnapshot.cs" />
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\AlunosTurma.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Materia.cs" />
     <Compile Include="Models\Professor.cs" />
@@ -229,6 +236,7 @@
     <Compile Include="Servicos\MateriaService.cs" />
     <Compile Include="Servicos\ProfessorService.cs" />
     <Compile Include="Servicos\TurmaService.cs" />
+    <Compile Include="SistemaMatriculaContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config">
@@ -237,6 +245,9 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -15,5 +15,11 @@ namespace Sistema_de_Matricula.Models
 
         [DataMember]
         public String Nome { get; set; }
+
+        [IgnoreDataMember]
+        public virtual Curso Cursos { get; set; } //navigation
+
+        [DataMember]
+        public int CursoID { get; set; }
     }
 }

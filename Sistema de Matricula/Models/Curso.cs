@@ -16,10 +16,10 @@ namespace Sistema_de_Matricula.Models
         [DataMember]
         public string Nome { get; set; }
 
-       // [IgnoreDataMember]
-       // public IList<Turma> Turmas { get; set; }//navigation 1 para n com turmas
+        [IgnoreDataMember]
+        public IList<Materia> Materias { get; set; }//navigation 1 para n com materias
 
-       // [IgnoreDataMember]
-       // public IList<Aluno> Alunos { get; set; }//navigation 1 para n com alunos 
+        [IgnoreDataMember]
+        public IList<Aluno> Alunos { get; set; }//navigation 1 para n com alunos 
     }
 }

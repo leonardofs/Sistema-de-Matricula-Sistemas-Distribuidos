@@ -23,16 +23,26 @@ namespace Sistema_de_Matricula.Models
         [DataMember]
         public string Sexo { get; set; }
 
+        [IgnoreDataMember]
+        public virtual Curso Cursos { get; set; } //navigation
+
+        [DataMember]
+        public int CursoID { get; set; }
+
+        [IgnoreDataMember]
+        public virtual IList<AlunosTurma> AlunosTurmas { get; set; }//navigation
+
+
 
         //todo tratar 1 para n
-      //  [IgnoreDataMember]
+        //  [IgnoreDataMember]
         //public virtual Curso Cursos { get; set; } //navigation
 
-       // [DataMember]
-       // public int CursoID { get; set; }
+        // [DataMember]
+        // public int CursoID { get; set; }
 
-       // [IgnoreDataMember]
-       // public virtual IList<AlunosTurma> AlunosTurmas { get; set; }//navigation
+        // [IgnoreDataMember]
+        // public virtual IList<AlunosTurma> AlunosTurmas { get; set; }//navigation
 
     }
 }

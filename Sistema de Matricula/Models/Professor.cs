@@ -26,6 +26,9 @@ namespace Sistema_de_Matricula.Models
             [DataMember]
             public string GrauAcademico { get; set; }
 
+            [IgnoreDataMember]
+             public IList<Turma> Turmas { get; set; }
+
         }
 
 }
