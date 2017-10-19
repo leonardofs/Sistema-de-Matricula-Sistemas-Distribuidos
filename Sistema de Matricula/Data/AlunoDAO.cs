@@ -18,8 +18,9 @@ namespace Sistema_de_Matricula.Data
         {
             using (SistemaMatriculaContext db = new SistemaMatriculaContext())
             {
-                 db.Alunos.AddAsync(a);
+                 db.Alunos.Add(a);
                  db.SaveChanges();
+                 db.Dispose();
             }
 
         }
@@ -30,7 +31,8 @@ namespace Sistema_de_Matricula.Data
             using (SistemaMatriculaContext db = new SistemaMatriculaContext())
             {
              var res = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-            return (Aluno)res;
+             db.Dispose();
+             return (Aluno)res;
             }
 
         }
@@ -42,6 +44,7 @@ namespace Sistema_de_Matricula.Data
                 var resultado = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
                 db.Alunos.Remove((Aluno)resultado);
                 db.SaveChanges();
+                db.Dispose();
             }
         }
 
