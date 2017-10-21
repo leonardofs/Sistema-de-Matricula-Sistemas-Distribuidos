@@ -49,17 +49,17 @@ namespace ClienteSistemaMatricula.ViewModels
         public CadastrarProfessorPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService, pageDialogService)
         {
             Nome = "";
-            DataNascimento = new DateTime(2000, 1, 1, 0, 00, 0);
+            DataNascimento = new DateTime(2000, 1, 1);
             Sexo = "0"; //0==Masculino   1==Feminino
             Registro = "";
-            GrauAcademico = "";
+            GrauAcademico = "0"; //0==Graguado   1==Pós-Graduado   2==Mestre   3==Doutor   4==Pós-Doutor
 
             CadastrarButtonCommand = new DelegateCommand(async () => await ExecuteCadastrarButtonCommand());
         }
 
         private async Task ExecuteCadastrarButtonCommand()
         {
-            if (Nome == "" || Nome.Length <= 3)
+            if (Nome.Length <= 3)
             {
                 await _pageDialogService.DisplayAlertAsync("Erro", "Nome inválido", "OK");
             }

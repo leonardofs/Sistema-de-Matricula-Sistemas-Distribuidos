@@ -44,7 +44,7 @@ namespace ClienteSistemaMatricula.ViewModels
 
         private async Task ExecuteCadastrarButtonCommand()
         {
-            if (Nome == "" || Nome.Length <= 3)
+            if (Nome.Length <= 3)
             {
                 await _pageDialogService.DisplayAlertAsync("Erro", "Nome inválido", "OK");
             }

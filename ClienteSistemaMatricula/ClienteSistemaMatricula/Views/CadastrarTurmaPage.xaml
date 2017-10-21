@@ -11,6 +11,8 @@
         <StackLayout AbsoluteLayout.LayoutBounds=".5,.5,.95,.95" AbsoluteLayout.LayoutFlags="All">
             <Entry Placeholder="Nome" Text="{Binding Nome}" TextColor="#152d54" PlaceholderColor="#152d54"/>
 
+            <Entry Placeholder="ID do Curso" Text="{Binding CursoID}" TextColor="#152d54" PlaceholderColor="#152d54"/>
+
             <Button Text="Cadastrar" TextColor="White" BackgroundColor="#2c4770" VerticalOptions="EndAndExpand" Command="{Binding CadastrarButtonCommand}"/>
         </StackLayout>
     </AbsoluteLayout>
