@@ -209,6 +209,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataEntity\AlunoDAO.cs" />
+    <Compile Include="DataEntity\AlunosTurmaDAO.cs" />
+    <Compile Include="DataEntity\CursoDAO.cs" />
+    <Compile Include="DataEntity\MateriaDAO.cs" />
+    <Compile Include="DataEntity\ProfessorDAO.cs" />
+    <Compile Include="DataEntity\TurmaDAO.cs" />
     <Compile Include="Data\AlunoDAO.cs" />
     <Compile Include="Data\AlunosTurmaDAO.cs" />
     <Compile Include="Data\CursoDAO.cs" />

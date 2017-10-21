@@ -19,7 +19,7 @@ namespace Sistema_de_Matricula.Servicos
         Aluno Buscar(string nome);
 
         [OperationContract]
-        IQueryable<Aluno> BuscarTodos();
+        List<Aluno> BuscarTodos();
 
         [OperationContract]
         void Remover(string nome);

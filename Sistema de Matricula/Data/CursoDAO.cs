@@ -11,50 +11,32 @@ namespace Sistema_de_Matricula.Data
     public class CursoDAO
     //TODO: PASSAR TODOS OS METODOS PARA ADO.NET 
     {
-
+        private static List<Curso> cursos = new List<Curso>();
         public void Add(Curso c)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                db.Cursos.Add(c);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            CursoDAO.cursos.Add(c);
+
         }
+
 
         public Curso Buscar(int id)
         {
-
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var res = db.Cursos.Where(a => a.ID.Equals(id)).FirstOrDefault();
-                db.Dispose();
-                return (Curso)res;
-            }
+            var resultado = CursoDAO.cursos.Where(c => c.ID.Equals(id)).FirstOrDefault();
+            return (Curso)resultado;
         }
 
-        public IQueryable<Curso> BuscarTodos()
+        public List<Curso> BuscarTodos()
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                IQueryable<Curso> res = db.Cursos;
-                db.Dispose();
-                return res;
-            }
+            return cursos.ToList();
         }
+
+
 
         public void Remover(int id)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var resultado = db.Cursos.Where(a => a.ID.Equals(id)).FirstOrDefault();
-                db.Cursos.Remove((Curso)resultado);
-                db.SaveChanges();
-                db.Dispose();
+            var resultado = CursoDAO.cursos.Where(c => c.ID.Equals(id)).FirstOrDefault();
 
-
-
-            }
+            CursoDAO.cursos.Remove((Curso)resultado);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Sistema_de_Matricula.Servicos
         void Add(AlunosTurma a);
 
         [OperationContract]
-        IQueryable<AlunosTurma> BuscarTodos(int idAluno);
+        List<AlunosTurma> BuscarTodos(int idAluno);
 
         [OperationContract]
         AlunosTurma Buscar(int idAluno, int idTurma);

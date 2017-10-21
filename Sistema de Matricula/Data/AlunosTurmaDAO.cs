@@ -1,60 +1,38 @@
-﻿using Sistema_de_Matricula.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sistema_de_Matricula.Models;
 
 namespace Sistema_de_Matricula.Data
 {
     public class AlunosTurmaDAO
     {
+
+        private static ICollection<AlunosTurma> at = new List<AlunosTurma>();
+
         public void Add(AlunosTurma a)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                db.Sala.Add(a);
-                db.SaveChanges();
-                db.Dispose();
-            }
-
+            at.Add(a);
         }
 
         // matriculaindividucal
-        public AlunosTurma Buscar(int idAlu,int idTurma)
+        public AlunosTurma Buscar(int idAlu, int idTurma)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var res = db.Sala.FirstOrDefault(a => a.AlunoID.Equals(idAlu) && a.TurmaID.Equals(idTurma));
-                db.Dispose();
-                return (AlunosTurma)res;
-            }
-
+            var res = at.FirstOrDefault(a => a.AlunoID.Equals(idAlu) && a.TurmaID.Equals(idTurma));
+            return res;
         }
 
-        public IQueryable<AlunosTurma> BuscarTodos(int idAlu)
+        public List<AlunosTurma> BuscarTodos(int idAlu)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                IQueryable<AlunosTurma> res = db.Sala.Where(a => a.AlunoID.Equals(idAlu) );
-                db.Dispose();
-                return res;
-            }
+            return at.ToList();
         }
-
-
 
         public void Remover(int idAlu, int idTurma)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var res = db.Sala.FirstOrDefault(a => a.AlunoID.Equals(idAlu) && a.TurmaID.Equals(idTurma));
-                db.Sala.Remove((AlunosTurma)res);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            var res = at.FirstOrDefault(a => a.AlunoID.Equals(idAlu) && a.TurmaID.Equals(idTurma));
+            at.Remove((AlunosTurma)res);
         }
-
-        //todo: atualizar
     }
 }

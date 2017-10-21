@@ -23,7 +23,7 @@ namespace Sistema_de_Matricula.Servicos
             return dao.Buscar(nome);
         }
 
-        public IQueryable<Turma> BuscarTodos()
+        public List<Turma> BuscarTodos()
         {
             TurmaDAO dao = new TurmaDAO();
             return dao.BuscarTodos();

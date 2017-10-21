@@ -18,7 +18,7 @@ namespace Sistema_de_Matricula.Servicos
         Curso Buscar(int id);
 
         [OperationContract]
-        IQueryable<Curso> BuscarTodos();
+        List<Curso> BuscarTodos();
 
 
         [OperationContract]

@@ -11,52 +11,31 @@ namespace Sistema_de_Matricula.Data
     //TODO: PASSAR TODOS OS METODOS PARA ADO.NET 
     public class ProfessorDAO
     {
-      
+        private static List<Professor> professores = new List<Professor>();
 
         public void Add(Professor p)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                db.Professores.Add(p);
-                db.SaveChanges();
-                db.Dispose();
-            }
-
+            ProfessorDAO.professores.Add(p);
+           
         }
 
 
         public Professor Buscar(string nome)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var res = db.Professores.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-                db.Dispose();
-                return (Professor)res;
-            }
+            var resultado = ProfessorDAO.professores.Where(p => p.Nome.Equals(nome)).FirstOrDefault();
+            return (Professor)resultado;
         }
 
-
-        public IQueryable<Professor> BuscarTodos()
+        public List<Professor> BuscarTodos()
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                IQueryable<Professor> res = db.Professores;
-                db.Dispose();
-                return res;
-            }
+            return professores.ToList();
         }
-
-
 
         public void Remover(string nome)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var resultado = db.Professores.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-                db.Professores.Remove((Professor)resultado);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            var resultado = ProfessorDAO.professores.Where(p => p.Nome.Equals(nome)).FirstOrDefault();
+
+             ProfessorDAO.professores.Remove((Professor)resultado);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Sistema_de_Matricula.Servicos
             return dao.Buscar(idAluno, idTurma);
         }
 
-        public IQueryable<AlunosTurma> BuscarTodos(int idAluno)
+        public List<AlunosTurma> BuscarTodos(int idAluno)
         {
             AlunosTurmaDAO dao = new AlunosTurmaDAO();
             return dao.BuscarTodos(idAluno);

@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Sistema_de_Matricula.Servicos
 {
-    // OBSERVAÇÃO: Você pode usar o comando "Renomear" no menu "Refatorar" para alterar o nome da classe "AlunoService" no arquivo de código e configuração ao mesmo tempo.
+   
     public class AlunoService : IAlunoService
     {
         public void Add(Aluno a)
@@ -25,7 +25,7 @@ namespace Sistema_de_Matricula.Servicos
             return dao.Buscar(nome);
         }
 
-        public IQueryable<Aluno> BuscarTodos()
+        public List<Aluno> BuscarTodos()
         {
             AlunoDAO dao = new AlunoDAO();
             return dao.BuscarTodos();

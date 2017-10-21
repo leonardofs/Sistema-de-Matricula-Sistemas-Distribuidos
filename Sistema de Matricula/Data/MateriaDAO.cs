@@ -11,48 +11,31 @@ namespace Sistema_de_Matricula.Data
     //TODO: PASSAR TODOS OS METODOS PARA ADO.NET 
     public class MateriaDAO
     {
-    
+        private static List<Materia> materias = new List<Materia>();
 
         public void Add(Materia m)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                db.Materias.Add(m);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            MateriaDAO.materias.Add(m);
         }
 
 
         public Materia Buscar(int id)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var res = db.Materias.Where(a => a.ID.Equals(id)).FirstOrDefault();
-                db.Dispose();
-                return (Materia)res;
-            }
+            var resultado = MateriaDAO.materias.Where(m => m.ID.Equals(id)).FirstOrDefault();
+            return (Materia)resultado;
         }
 
-        public IQueryable<Materia> BuscarTodos()
+        public List<Materia> BuscarTodos()
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                IQueryable<Materia> res = db.Materias;
-                db.Dispose();
-                return res;
-            }
+            return materias.ToList();
         }
+
+
 
         public void Remover(int id)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var resultado = db.Materias.Where(a => a.ID.Equals(id)).FirstOrDefault();
-                db.Materias.Remove((Materia)resultado);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            var resultado = MateriaDAO.materias.Where(m => m.ID.Equals(id)).FirstOrDefault();
+            MateriaDAO.materias.Remove((Materia)resultado);
         }
 
         //todo atualizar

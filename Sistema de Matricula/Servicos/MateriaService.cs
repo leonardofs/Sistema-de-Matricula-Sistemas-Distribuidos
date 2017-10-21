@@ -24,7 +24,7 @@ namespace Sistema_de_Matricula.Servicos
             return dao.Buscar(id);
         }
 
-        public IQueryable<Materia> BuscarTodos()
+        public List<Materia> BuscarTodos()
         {
             MateriaDAO dao = new MateriaDAO();
             return dao.BuscarTodos();

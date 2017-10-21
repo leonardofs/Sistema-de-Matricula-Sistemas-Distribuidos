@@ -14,48 +14,29 @@ namespace Sistema_de_Matricula.Data
     //TODO: PASSAR TODOS OS METODOS PARA ADO.NET 
     public class AlunoDAO
     {
+        private static List<Aluno> alunos = new List<Aluno>();
+
         public void Add(Aluno a)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                 db.Alunos.Add(a);
-                 db.SaveChanges();
-                 db.Dispose();
-            }
-
+            AlunoDAO.alunos.Add(a);  
         }
-
 
         public Aluno Buscar(string nome)
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-             var res = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-             db.Dispose();
-             return (Aluno)res;
-            }
-
+            var resultado = AlunoDAO.alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
+            return (Aluno)resultado;
         }
 
-
-        public IQueryable<Aluno> BuscarTodos()
+        public List<Aluno> BuscarTodos()
         {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                IQueryable<Aluno> res = db.Alunos;
-                db.Dispose();
-                return res;
-            }
+            return alunos.ToList();
         }
+
 
         public void Remover(string nome) {
-            using (SistemaMatriculaContext db = new SistemaMatriculaContext())
-            {
-                var resultado = db.Alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
-                db.Alunos.Remove((Aluno)resultado);
-                db.SaveChanges();
-                db.Dispose();
-            }
+            var resultado = AlunoDAO.alunos.Where(a => a.Nome.Equals(nome)).FirstOrDefault();
+
+            AlunoDAO.alunos.Remove((Aluno)resultado);
         }
 
         //todo: atualizar
